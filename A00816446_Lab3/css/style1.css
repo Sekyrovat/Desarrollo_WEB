@@ -1,0 +1,152 @@
+/*Default styles for the whole body of the page*/
+body{
+	font-family: Verdana, sans-serif;
+	/*We will be using em for scaling*/
+	font-size: 1em;
+	color: black;
+	margin: 0;
+	padding: 0;
+	background: url("./../img/indexBackGround.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    text-decoration: none;
+    letter-spacing: .001em;
+    word-spacing: .01em;
+}
+
+#bodylogin{
+	background: url("./../img/login.jpg");
+}
+
+/*Values for the main header*/
+h1{
+	font-size: 2em;
+	margin: 1.5em;
+	padding: 0;
+	color: #0039e6;
+	text-align: center;
+	position: relative;
+}
+
+/*Values for the heading of the forms*/
+h2{
+	font-size: 1.5em;
+	margin: 0.2em;
+	padding: 0.5em;
+	color: rgb(0,0,175);
+	text-align: center;
+	position: relative;
+}
+
+section{
+	line-height: 1.2em;
+	position: relative;
+	width: 15em;
+	background-color: rgba(153, 153, 153, 0.9);
+	border: .4em solid black;
+	overflow: hidden;
+	margin: 2em;
+	padding: .1em;
+	display: inline-block;
+}
+
+section#registration{
+	float: left;
+	margin-bottom: 5em;
+}
+
+section#login{
+	float: left;
+	left: 1em;
+}
+
+section#slides{
+	background-color: rgba(128, 128, 128, 0.7);
+	float: left;
+	position: relative;
+	float: left;
+	width: 55em;
+	left: 25em;
+	top: 5em;
+	border: 1em solid rgba(0, 0, 0, 0.6);
+}
+
+form{
+	margin: 0.2em;
+	border: 3px solid #73AD21;
+}
+
+legend{
+	color: rgb(51, 255, 51);
+	text-align: left;
+	position: relative;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+fieldset{
+	margin: 10px;
+	padding: 10px;
+	color: black;
+	position: relative;
+	border: dashed;
+}
+
+input[type=text||password]{
+	font-size: 12px;
+	padding: 12px 20px;
+	margin: 10px 0;
+	position: relative;
+	box-sizing: border-box;
+}
+
+input[type=text||password]:focus{
+    border: 3px solid #555;
+}
+
+input[type=checkbox]{
+    width:30px;
+    height:30px;
+    background:white;
+    border-radius:.05em;
+    border:2px solid #555;
+}
+
+select{
+    border: none;
+    border-radius: .5em;
+    background-color: #f1f1f1;
+}
+
+.buttons{
+	margin: 2em;
+	border: none;
+    color: white;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+fieldset > input.buttons:hover{
+	border: 0.5em gray;
+}
+
+#forgot, #resetBtn{
+	background: #9999ff;
+}
+
+#loginSubmit, #registerSubmit{
+	background: #248f24;
+}
+
+.errorMsg{
+	background: none;
+	color: red;
+	border: none;
+	background-size: 0px;
+	border: none;
+	display: inline;
+	padding: 0px;
+}

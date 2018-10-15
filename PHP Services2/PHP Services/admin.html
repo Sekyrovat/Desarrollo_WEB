@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documento HTML</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    </head>
+    <body>
+        <h1> PUT and DELETE Services </h1>
+        <h2> Admin section </h2>
+        <fieldset>
+            <legend>Login validated with PHP Service</legend>
+            <div id="loginContainer">
+                <p>
+                    Username<br/>
+                    <input id="userName" class="formElement" type="text" />
+                </p>
+                <p>
+                    Current Password<br/>
+                    <input id="currentPassword" class="formElement" type="password" />
+                </p>  
+                <p>
+                    New Password<br/>
+                    <input id="newPassword" class="formElement" type="password" />
+                </p>   
+                <p>
+                    <input type="button" id="updateButton" value="Update"/>
+                    <input type="button" id="deleteButton" value="Delete"/>
+                </p>      
+            </div>
+        </fieldset>
+        <input type="button" id="logoutButton" value="Logout"/>
+        <script src="./js/jquery.js" type="text/javascript"></script>
+        <script src="./js/admin.js" type="text/javascript"></script>
+    </body>
+</html>     

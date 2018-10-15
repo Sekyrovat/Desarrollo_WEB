@@ -1,0 +1,60 @@
+body{
+	font-family: Verdana;
+	text-decoration: none;
+	color: rgba(128, 128, 128, 0.5);
+}
+
+.divClassTest{
+	color: red;
+	background-color: blue;
+}
+
+form{
+	background: url('../img/862926.png') no-repeat top left black;
+}
+
+span{
+	background-color: red;
+	color: #4F545F4F;
+	margin: 2em;
+}
+
+form input{
+	background-color: yellow;
+	margin: 10em 2em;
+}
+
+form > input{
+	background-color: green;
+	display: block;
+	margin: 10em 1em 20em 50em;
+		/*  Top Right Bottom Left  */
+}
+
+thead{
+	background-color: blue;
+}
+
+#parrafoConId{
+	color: blue;
+}
+
+.gender{
+	color: red;
+}
+
+p {
+	font-weight: 200;
+}
+
+table {
+	border: 0.5em solid blue;
+}
+
+td{
+	border: 0.5em solid red;
+}
+
+thead > tr > th{
+	border: 0.4em solid green;
+}

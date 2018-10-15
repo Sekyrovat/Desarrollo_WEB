@@ -1,0 +1,101 @@
+h1{
+	color: blue;
+	text-align: left;
+	font-family: Arial, Verdana, Georgia;
+	position: relative;
+}
+
+h2{
+	color: rgb(0,0,175);;
+	text-align: left;
+	font-family: Arial, Verdana, Georgia;
+	position: relative;
+}
+
+div{
+	background:rgba(128,128,128,.5);
+	line-height: 1.2;
+	position: relative;
+	width: 350px
+}
+
+span.forms{
+	color: blue;
+	font-family: Arial, Verdana, Georgia;
+	position: relative;
+}
+
+p{
+	font-family: Arial, Verdana, Georgia;
+	font-size: 14px; 
+	position: relative;
+}
+
+/* Un parrafo precedido por otro tendra un margen*/
+p + p {
+	position: relative;
+    margin-top: 20px;
+}
+
+input[type=text||password]{
+	font-family: Arial, Verdana, Georgia;
+	font-size: 12px;
+	padding: 12px 20px;
+	margin: 10px 0;
+	position: relative;
+	box-sizing: border-box;
+}
+
+input[type=text||password]:focus {
+    border: 3px solid #555;
+}
+
+input[type=checkbox]{
+    width:30px;
+    height:30px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}
+
+legend{
+	color: green;
+	text-align: left;
+	font-family: Arial, Verdana, Georgia;
+	position: relative;
+}
+
+form.registrationForm{
+	position: absolute;
+	right: 30px;
+	border: 3px solid #73AD21;
+}
+
+form.loginForm{
+	position: absolute;
+	right: : 0px;
+	border: 3px solid #73AD21;
+}
+
+select{
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+text{
+	font-family: Arial, Verdana, Georgia;
+	font-size: 14px;
+}
+
+footer{
+	position: relative;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: gray;
+	color: white;
+	text-align: center;
+	position: relative;
+	font-family: Arial, Verdana, Georgia;
+}

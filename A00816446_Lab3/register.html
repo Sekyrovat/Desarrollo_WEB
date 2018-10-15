@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<!-- We group the title, link to css, meta
+			 and h1 tag since we won't be
+			 using it for anything else -->
+		<header>
+			<head>
+				<title>The Jammer</title>
+				<link rel="stylesheet" type="text/css" href="./css/style1.css">
+				<meta charset="utf-8"/>
+			</head>
+			<h1>The jammer</h1>
+		</header>
+		
+		<!-- Now we begin with the main part -->
+		<main lang="en-US" id="content">
+			<!-- The following section is dedicated 
+				 to the form used to register new users. -->
+			<section id="registration">
+				<h2>New User</h2>
+					<form id="registrationForm">
+						<fieldset>
+							<legend>New User Registration</legend>
+							
+							Name <input type="text" name="userFname" id="registrationUserFname">
+							<span class="errorMsg" id="errorFName"></span>
+							</br>
+							
+							Lastname <input type="text" name="userLname" id="registrationUserLname">
+							<span class="errorMsg" id="errorLName"></span>
+							</br>
+							
+							Username <input type="text" name="userName" id="registrationUserName">
+							<span class="errorMsg" id="errorUName"></span>
+							</br>
+							</br>
+							
+							Email <input type="text" name="userEmail" id="registrationUserEmail">
+							<span class="errorMsg" id="errorEmail"></span>
+							</br>
+							</br>
+							
+							Password <input type="password" name="pass1" id="registrationUserPass1">
+							<span class="errorMsg" id="errorPass1"></span>
+							</br>
+							
+							Password Confirmation <input type="password" name="pass2" id="registrationUserPass2">
+							<span class="errorMsg" id="errorPass2"></span>
+							</br>
+							</br>
+							
+							Gender <br>
+							<span class="errorMsg" id="errorGender"></span>
+							<br>
+							<label>
+								<input type="radio" class="gender" id="femaleGen"> Female <br>
+							</label>
+							<label>
+								<input type="radio" class="gender" id="maleGen"> Male <br>
+							</label>
+							</br>
+							
+							Native Country 
+							<span class="errorMsg" id="errorCountry"></span>
+							<select id="natCountry" name="countrySelect">
+								<option value = "0" selected="selected">Please select a country</option>
+								<option value = "1"> Aregentina </option>
+								<option value = "2"> Canada </option>
+								<option value = "3"> Costa Rica </option>
+								<option value = "4"> Egypt </option>
+								<option value = "5"> Germany </option>
+								<option value = "6"> Greece </option>
+								<option value = "7"> Iceland </option>
+								<option value = "8"> Ireland </option>
+								<option value = "9"> Macao </option>
+								<option value = "10"> Mexico </option>
+								<option value = "11"> Monaco </option>
+								<option value = "12"> Pakistan </option>
+								<option value = "13"> Russia </option>
+								<option value = "14"> South Korea </option>
+								<option value = "15"> Unites States</option>
+							</select> 
+							<br>
+
+							<input type="submit" name="registerButton" value="Register" class="buttons" id="registerSubmit">
+
+						</fieldset>
+					</form>
+						<input type="submit" name="reset" id="resetBtn" class="buttons" value="Reset Info">
+			</section>
+
+			<section id="slides">
+				  <img class="mySlides" src="./img/slide1.jpg" style="width:100%">
+				  <img class="mySlides" src="./img/slide5.jpg" style="width:100%">
+				  <img class="mySlides" src="./img/slide3.jpg" style="width:100%">
+			</section>
+
+				<script>
+					var myIndex = 0;
+					carousel();
+
+					function carousel() 
+					{
+					    var i;
+					    var x = document.getElementsByClassName("mySlides");
+					    for (i = 0; i < x.length; i++)
+					    {
+					       x[i].style.display = "none";
+					    }
+					    myIndex++;
+					    if (myIndex > x.length) 
+					    {
+					    	myIndex = 1;
+					    }
+					    x[myIndex-1].style.display = "block";
+					    setTimeout(carousel, 3000);
+					}
+				</script>
+			</section>
+
+			
+		</main>
+
+	<script type="text/javascript" src="./js/index.js"></script>
+	</body>
+</html>

@@ -1,0 +1,140 @@
+<html>
+	<head>
+		<title>
+			This is my first html page
+		</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>	
+	<body>
+		<header>
+			<h1> 
+				Registry Form 
+			</h1>
+		</header>
+		<nav>
+			<ul id="menu">
+				<li class="home"> 
+					Home 
+				</li>
+				<li class="about"> 
+					About the site 
+				</li>
+				<li class="account selectedNavElement"> 
+					Registry 
+				</li>
+				<li class="contact"> 
+					Contact 
+				</li>
+				<li class="copyright"> 
+					Copyright 
+				</li>
+			</ul>
+		</nav>
+		<main>
+			<section id="home-section" class="hideElement">
+				<div>
+					This is the home section
+				</div>
+			</section>
+			<section id="about-section" class="hideElement">
+				<div>
+					This is the about section
+				</div>
+			</section>
+			<section id="contact-section" class="hideElement">
+				
+			</section>
+			<section id="copyright-section" class="hideElement">
+				<div>
+					This is the copyright section
+				</div>
+			</section>
+			<section id="account-section">
+				<div id="newAccount">
+					New Account Registry
+				</div>
+			
+				<span id="information"> 
+					Your information is safe with us 
+				</span>
+				<p>
+					Complete name
+				</p>
+				<input id="completeName" class="formElement" type="text" /> 
+				<span class="errorStyle hideElement" id="completeNameErrorMessage">Please type your name</span>
+				<br/>
+				<p>Email</p>
+				<input id="email" class="formElement" type="email"/>
+				<span class="errorStyle hideElement" id="emailErrorMessage">Please type your email</span>
+				<span class="errorStyle hideElement" id="emailErrorMessage2">Invalid email</span>
+				<br/>
+				<p>Password</p>
+				<input id="password" class="formElement" type="password"/>
+				<span class="errorStyle hideElement" id="passwordErrorMessage">Please type your password</span>
+				<br/>
+				<p>Password Confirmation</p>
+				<input id="passwordConf" class="formElement" type="password"/>
+				<span class="errorStyle hideElement" id="passwordConfErrorMessage">Please verify your password</span>
+				<span class="errorStyle hideElement" id="passwordMismatchErrorMessage">Password do not match</span>
+				<br/>
+				<p>Country</p>
+				<select id="country">
+					<option value="0"> Select a country... </option>
+					<option value="1"> Mexico </option>
+					<option value="2"> USA </option>
+				</select>
+				<span id="countryErrorMessage" class="errorStyle hideElement">Please select a country</span>
+				<br/>
+				<p>
+					Gender 
+				</p> 
+				<label>
+					<input type="radio" name="gender" value="M"/> Masculine 
+				</label>
+				<br/>
+				<label>
+					<input type="radio" name="gender" value="F"/> Feminine
+				</label>
+				<br/> 
+				<span class="errorStyle hideElement" id="genderErrorMessage"> Please select a gender
+				</span>
+				<br/>
+				<input class="buttonHover" id="cancelButton" type="submit" value="Cancel"/>
+				<input class="buttonHover" id="submitButton" type="submit" value="Submit"/>
+			</section>	
+		</main>
+		<footer>
+			Footer would go here
+		</footer>
+
+		<script
+		  src="https://code.jquery.com/jquery-3.3.1.js"
+		  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		  crossorigin="anonymous"></script>
+
+		<script type="text/javascript" src="js/indexJQ.js">
+		</script>
+		<!--
+			<script type="text/javascript" src="js/index.js">
+			</script> 
+		-->
+	</body>	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
