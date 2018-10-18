@@ -35,9 +35,9 @@
 
 			if ($result->num_rows > 0)
 			{
-				// Once we verify the user is who he claims he is is, we do the session part.
+				# Once we verify the user is who he claims he is is, we do the session part.
 
-				// When the session has already been created with session_start and we use the start again we open the session.
+				# When the session has already been created with session_start and we use the start again we open the session.
 				session_start();
 
 				setcookie("userName", $uName, time() + 600, "/", " ", 0);
@@ -45,7 +45,7 @@
 				while ($row = $result->fetch_assoc())
 				{
 					$response = array("firstName" => $row["fName"], "lastname" => $row["lName"]);
-					// On the session array, we specify the name of the variable.
+					# On the session array, we specify the name of the variable.
 					$_SESSION['firstName'] = $row["fName"];
 					$_SESSION['lastName'] = $row["lName"];
 					$_SESSION['userName'] = $uName;

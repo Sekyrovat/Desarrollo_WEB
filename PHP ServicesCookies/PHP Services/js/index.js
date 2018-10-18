@@ -3,11 +3,12 @@ $("#loginButton").on("click", function(event){
 
 	let jsonToSend ={
 						"username" : $("#username").val(),
-						"password" : $("#userPassword").val()
+						"password" : $("#userPassword").val(),
+						"action" : "LOGIN"
 					};
 
 	$.ajax({
-		url : "./data/loginService.php",
+		url : "./data/applicationLayer.php",
 		type : "GET",
 		data : jsonToSend,
 		ContentType : "application/json",
