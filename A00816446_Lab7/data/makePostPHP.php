@@ -1,13 +1,8 @@
 <?php
+session_start();
 
-header('Accept: application/json');
-header('Content-type: application/json');
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "weblab";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+require('connect.php');
+require ('verifySession.php');
 
 if ($conn->connect_error) 
 {
@@ -16,15 +11,12 @@ if ($conn->connect_error)
 }
 else
 {
-    session_start();
-
-    $userId = $_SESSION['userId'];
 
     $query = "INSERT INTO userposts (postPosterId, postText, postImage) 
         VALUES (:postPosterId, :postText, :postImage)";
 
     $prepared_stmt = $conn->prepare($query);
-    $prepared_stmt->bindParam(':postPosterId',$userId);
+    $prepared_stmt->bindParam(':postPosterId',$_SESSION['userId']);
     $prepared_stmt->bindParam(':postText',$_POST['postText']);
     $prepared_stmt->bindParam(':postImage',$_POST['postImage']);
 

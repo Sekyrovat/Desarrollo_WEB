@@ -3,8 +3,10 @@
 header('Accept: application/json');
 header('Content-type: application/json');
 
-require('connect.php');
+session_start();
 
+require('connect.php');
+require ('verifySession.php');
 
 if ($conn->connect_error) 
 {

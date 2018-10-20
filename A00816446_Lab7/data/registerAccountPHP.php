@@ -1,9 +1,11 @@
 <?php
+session_start();
 
 header('Accept: application/json');
 header('Content-type: application/json');
 
 require('connect.php');
+require ('verifySession.php');
 
 if ($conn->connect_error) 
 {
