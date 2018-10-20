@@ -23,12 +23,13 @@ else
     {
         $userPassword = $_POST['userPassword'];
 
-        $query = "SELECT userPwd,userId FROM useraccounts WHERE username = ?";
+        $query = "SELECT userPwd,userId FROM useraccounts WHERE username = ? AND userPwd = ?";
 
         $prepared_stmt = $conn->prepare($query);
-        $prepared_stmt->bind_param("s",$user1);
+        $prepared_stmt->bind_param("ss",$user1,$userPassword1);
 
         $user1 = $user;
+        $userPassword1 = $userPassword;
 
         if (!$prepared_stmt->execute()) 
         {
@@ -48,22 +49,20 @@ else
                 $_SESSION['userId'] = $unId;
 
                 $response = array("status" => "success");
-                echo json_encode($response);
                 /* free results */
-                $prepared_stmt->free_result();
-
                 /* close statement */
+                $prepared_stmt->free_result();
                 $prepared_stmt->close();
+                echo json_encode($response);
             } 
             else 
             {
+                /* free results */
+                /* close statement */
+                $prepared_stmt->free_result();
+                $prepared_stmt->close();
                 header('HTTP/1.1 409 Conflict, invalid user password combination.');
                 die("Invalid user password combination.");
-                /* free results */
-                $prepared_stmt->free_result();
-
-                /* close statement */
-                $prepared_stmt->close();
             }
         }
     }

@@ -9,9 +9,6 @@ $.ajax({
 	dataType : 'json',
 	success : function(data){
 		let temp = "";
-
-		const {username, userFiName, userLaName, userEmail, userCountry} = data;
-
 		if (data.userGender == 0) 
 		{
 			temp = "Female";
@@ -23,12 +20,12 @@ $.ajax({
 
 		let newHtml = ``;
 
-		newHtml += `<p id="userName">${username}</p>
-		<p id="fName">${userFiName}</p>
-		<p id="lName">${userLaName}</p>
-		<p id="eMail">${userEmail}</p>
+		newHtml += `<p id="userName">${data.username}</p>
+		<p id="fName">${data.userFiName}</p>
+		<p id="lName">${data.userLaName}</p>
+		<p id="eMail">${data.userEmail}</p>
 		<p id="gender">${temp}</p>
-		<p id="country">${userCountry}</p>`;
+		<p id="country">${data.userCountry}</p>`;
 
 		$('#userAccountInfo').append(newHtml);
 	},

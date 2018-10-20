@@ -4,6 +4,17 @@ header('Content-type: application/json');
 
 require('connect.php');
 
+
+if(empty($_SESSION['userId']))
+{
+    // If they are not, redirect them to the login page.
+    header("Location: ./login.html");
+    
+    // Remember that this die statement is absolutely critical.  Without it,
+    // people can view your members-only content without logging in.
+    die("Redirecting to login");
+}
+
 #session_start();
 #$uId = $_SESSION['userId'];
 
