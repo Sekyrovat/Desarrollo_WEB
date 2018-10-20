@@ -7,7 +7,7 @@ require('connect.php');
 
 $user = $_POST['userName'];
 
-if(userName_exits($user))
+if(userName_exits($user, $conn))
 {
     header('HTTP/1.1 409 Invalid credentials.');
     die("Invalid credentials provided.");
@@ -18,12 +18,11 @@ else
 
     $query = "SELECT userPwd, userId 
                 FROM useraccounts 
-                WHERE username = :uName AND userPwd = :uPass";
+                WHERE username = ? AND userPwd = ?";
 
     $prepared_stmt = $conn -> prepare($query);
 
-    $prepared_stmt -> bind_param( ':uName' ,$user );
-    $prepared_stmt -> bind_param( ':uPass' ,$userPassword );
+    $prepared_stmt -> bind_param( 'ss' ,$user, $userPassword );
 
     if (!$prepared_stmt -> execute()) 
     {
@@ -61,10 +60,10 @@ else
 }
 
 
-function userName_exits($userName)
+function userName_exits($userName, $conn)
 { 
-    $prepared_stmtForUserNameValidation = $conn -> prepare('SELECT * FROM useraccounts WHERE username = :uName');
-    $prepared_stmtForUserNameValidation -> bind_param( ':uName' , $userName );
+    $prepared_stmtForUserNameValidation = $conn -> prepare('SELECT * FROM useraccounts WHERE username = ?');
+    $prepared_stmtForUserNameValidation -> bind_param('s' , $userName);
 
     $prepared_stmtForUserNameValidation -> execute();
     $prepared_stmtForUserNameValidation -> store_result();

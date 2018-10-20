@@ -17,6 +17,7 @@ $('#loginSubmit').on("click",function(event){
 				if (data.status === "success")
 				{
 					location.href = "./html/homePage.html";
+					console.log(data);
 				}
 			},
 			error : function(error){
