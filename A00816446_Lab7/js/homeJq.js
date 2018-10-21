@@ -4,7 +4,20 @@ $('#newPostButton').on("click", function (argument) {
 
 $('#cancelImage').on("click",function (argument) {
 	relod();
-})
+});
+
+$('#logoutBtn').on("click",function (argument) {
+	$.ajax({
+		url : "../data/logoutService.php",
+		type : "POST",
+		success : function(data) {
+			window.location.replace("../index.html");
+		},
+		error : function(err) {
+			console.log(err);
+		}
+	});
+});
 
 function addContent() {
 	let jsonToSend = {

@@ -6,7 +6,12 @@ header('Content-type: application/json');
 session_start();
 
 require('connect.php');
-require ('verifySession.php');
+
+if(empty($_SESSION['userId']) || !isset($_SESSION['userId']) || $_SESSION['userId'] === 'undefined')
+{
+    echo json_encode(array('status' => 'notLoggedIn'));
+    die();
+}
 
 if ($conn->connect_error) 
 {

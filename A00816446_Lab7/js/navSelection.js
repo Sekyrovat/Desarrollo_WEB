@@ -30,3 +30,16 @@ $('#navigationBars > section > a').on("click", function(event) {
 	// $('#'  + currentId + 'Section').removeClass('hiddenElement');
 
 });
+
+$('#logoutBtn').on("click",function (argument) {
+	$.ajax({
+		url : "../data/logoutService.php",
+		type : "POST",
+		success : function(data) {
+			window.location.replace("../index.html");
+		},
+		error : function(err) {
+			console.log(err);
+		}
+	});
+});

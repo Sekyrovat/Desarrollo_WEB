@@ -8,6 +8,11 @@ $.ajax({
 	type : 'GET',
 	dataType : 'json',
 	success : function(data){
+		if (data.status === 'notLoggedIn')
+    	{
+    		window.location.replace("../index.html");
+    	}
+	    	
 		let temp = "";
 		if (data.userGender == 0) 
 		{

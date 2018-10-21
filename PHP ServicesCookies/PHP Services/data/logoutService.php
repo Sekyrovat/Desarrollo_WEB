@@ -1,8 +1,8 @@
 <?php
-
-	if (isset($_COOKIE['firstName']) && isset($_COOKIE['lastName']) && isset($_COOKIE['userName'])) 
+	if (isset($_SESSION['firstName']) && isset($_SESSION['lastName']) && isset($_SESSION['userName'])) 
 	{
-		// We redirect to login.
+
+		header("location : './index.html'")
 		die("You have logged out");
 	}
 

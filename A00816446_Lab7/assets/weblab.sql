@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2018 at 10:18 AM
+-- Generation Time: Oct 21, 2018 at 02:48 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -94,7 +94,7 @@ CREATE TABLE `userposts` (
   `postPosterId` smallint(5) UNSIGNED NOT NULL COMMENT 'Id of the user who made the post',
   `postDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Date on which the post was made',
   `postText` text COMMENT 'Text of the post',
-  `postImage` text COMMENT 'Path to the image in the file system'
+  `postImage` text NOT NULL COMMENT 'Path to the image in the file system'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table to have the information of every post.';
 
 --
@@ -102,8 +102,22 @@ CREATE TABLE `userposts` (
 --
 
 INSERT INTO `userposts` (`postPosterId`, `postDate`, `postText`, `postImage`) VALUES
-(1, '2018-10-10 06:12:47', 'Hello there general.', NULL),
-(2, '2018-10-09 07:00:00', 'Here I am everyone. Come get me.', NULL);
+(1, '2018-10-10 06:12:47', 'Hello there general.', ''),
+(1, '2018-10-11 12:54:30', '', 'rwhertjnh'),
+(1, '2018-10-11 12:54:34', '', 'rwhertjnh'),
+(1, '2018-10-11 12:54:55', '', 'rwhertjnhaW43uhya3ewju4'),
+(1, '2018-10-11 13:02:06', 'rwhertjnhaW43uhya3ewju4', ''),
+(1, '2018-10-11 13:02:15', 'rwhertjnhaW43uhya3ewju4', ''),
+(1, '2018-10-11 13:12:22', 'rwhertjnhaW43uhya3ewju4', ''),
+(1, '2018-10-11 13:12:31', 'test1', ''),
+(1, '2018-10-11 13:13:17', 'test2', ''),
+(1, '2018-10-11 13:14:07', 'test2', ''),
+(1, '2018-10-11 13:14:14', 'test3', ''),
+(1, '2018-10-11 13:14:25', 'test3', 'test3'),
+(1, '2018-10-11 14:02:59', 'test9', ''),
+(1, '2018-10-13 14:05:14', 'jhbnrleinlrebnpep;', ''),
+(1, '2018-10-13 14:05:32', 'Hello everyone How are3 you doing?', ''),
+(2, '2018-10-09 07:00:00', 'Here I am everyone. Come get me.', '');
 
 --
 -- Indexes for dumped tables

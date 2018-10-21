@@ -4,10 +4,11 @@ $(document).ready(function () {
 	    type : "GET",
 	    dataType : "json",
 	    success : function(data){
-	        console.log(data);
-	    	console.log("success");
 
-
+	    	if (data.status === 'notLoggedIn')
+	    	{
+	    		window.location.replace("../index.html");
+	    	}
 			let newHtml = "";
 
 			let posterId = "";
@@ -75,31 +76,31 @@ $(document).ready(function () {
 	});
 });
 
-// Get the modal
-var modal = document.getElementById('myModal');
+// // Get the modal
+// var modal = document.getElementById('myModal');
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+// // Get the <span> element that closes the modal
+// var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
-$('.modalCaller').onclick = function() {
+// // When the user clicks on the button, open the modal
+// $('.modalCaller').onclick = function() {
     
-}
+// }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
+// // When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//     modal.style.display = "none";
+// }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-} 
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//     }
+// } 
 
-$(document).on("click",".modalCaller", function () {
-   // var clickedBtnID = $(this).attr('id'); // or var clickedBtnID = this.id
-   // alert('you clicked on button #' + clickedBtnID);
-   $(this).modal.style.display = "block";
-});
+// $(document).on("click",".modalCaller", function () {
+//    // var clickedBtnID = $(this).attr('id'); // or var clickedBtnID = this.id
+//    // alert('you clicked on button #' + clickedBtnID);
+//    $(this).modal.style.display = "block";
+// });
