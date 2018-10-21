@@ -5,7 +5,7 @@ header('Content-type: application/json');
 
 require('connect.php');
 
-$user = $_POST['userName'];
+$user = $_GET['userName'];
 
 if(userName_exits($user, $conn))
 {
@@ -14,7 +14,7 @@ if(userName_exits($user, $conn))
 }
 else
 {
-    $userPassword = $_POST['userPassword'];
+    $userPassword = $_GET['userPassword'];
 
     $query = "SELECT userPwd, userId 
                 FROM useraccounts 
@@ -22,9 +22,9 @@ else
 
     $prepared_stmt = $conn -> prepare($query);
 
-    $prepared_stmt -> bind_param( 'ss' ,$user, $userPassword );
+    $prepared_stmt -> bind_param( 'ss', $user, $userPassword );
 
-    if (!$prepared_stmt -> execute()) 
+    if (!$prepared_stmt -> execute())
     {
         header('HTTP/1.1 500 Bad connection. Something happened while saving your data, please try again later');
         die("Error: " . $query . "\n" . mysqli_error($conn));
@@ -35,7 +35,7 @@ else
         $prepared_stmt -> bind_result($pwd, $unId);
         $prepared_stmt -> fetch();
 
-        if ($pwd === $userPassword) 
+        if ($pwd === $userPassword)
         {
             session_start();
             $_SESSION['userId'] = $unId;

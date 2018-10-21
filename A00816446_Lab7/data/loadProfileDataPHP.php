@@ -23,7 +23,7 @@ else
 
     $query = "SELECT * FROM useraccounts WHERE userId = ?;";
     $stmt = $conn->prepare($query);
-    $temp = 1;
+    $temp = $_SESSION['userId'];
     $stmt->bind_param("i", $temp);
 
     if (!$stmt->execute()) 
@@ -40,13 +40,13 @@ else
 
         $arrOfData = array("userCountry" => $row["userCountry"], "userEmail" => $row["userEmail"], "userFiName" => $row["userFiName"], "userLaName" => $row["userLaName"], "userGender" => $row["userGender"], "username" => $row["username"], "userProfilePic" => $row["userProfilePic"]);
 
-        echo json_encode($arrOfData);
-
         /* free results */
         $stmt->free_result();
 
         /* close statement */
         $stmt->close();
+        echo json_encode($arrOfData);
+
     }
 }
 ?>

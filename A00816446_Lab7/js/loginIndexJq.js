@@ -57,15 +57,15 @@ $('#loginSubmit').on("click",function(event){
 
 		$.ajax({
 			url : "./data/loginToAccountPHP.php",
-			type : "POST",
+			type : "GET",
 			data : jsonToSend,
 			ContentType : "json",
 			dataType : "json",
 			success : function(data){
 				if (data.status === "success")
 				{
-					location.href = "./html/homePage.html";
 					console.log(data);
+					location.href = "./html/homePage.html";
 				}
 			},
 			error : function(error){

@@ -35,8 +35,8 @@ if  ( $prepared_stmt -> execute() ) {
     $prepared_stmt -> close();
     echo json_encode ( $response );
 } else {
-    header ( 'HTTP/1.1 500 Conflict, something went wrong, try again later.' );
     $prepared_stmt -> close();
+    header ( 'HTTP/1.1 500 Conflict, something went wrong, try again later.' );
     die ( "Service unreachable" );
 }
 

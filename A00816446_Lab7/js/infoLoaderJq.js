@@ -25,7 +25,7 @@ $.ajax({
 
 		let newHtml = ``;
 
-		newHtml += `<p id="userName">${data.username}</p>
+		newHtml = `<p id="userName">${data.username}</p>
 		<p id="fName">${data.userFiName}</p>
 		<p id="lName">${data.userLaName}</p>
 		<p id="eMail">${data.userEmail}</p>

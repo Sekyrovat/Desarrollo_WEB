@@ -16,12 +16,12 @@ $query = "SELECT pt1.postPosterId, pt1.postText, pt1.postImage, useraccounts.use
 
 $stmt = $conn->prepare($query);
 $temp = $_SESSION['userId'];
-$stmt->bind_param("iiiii",$temp,$temp,$temp,$temp,$temp);
+$stmt->bind_param("iiiii", $temp, $temp, $temp, $temp, $temp);
 if ($stmt->execute()) {
     $result = $stmt->get_result();
     $arrOfPosts = array();
 
-    while ($row = mysqli_fetch_assoc($result)) {
+    while($row = mysqli_fetch_assoc($result)) {
         $currentRow = array("posterId" => $row["postPosterId"], "postText" => $row["postText"], "postImage" => $row["postImage"], "posterProfilePic" => $row["userProfilePic"], "posterUserName" => $row["username"]);
         array_push($arrOfPosts, $currentRow);
     }
