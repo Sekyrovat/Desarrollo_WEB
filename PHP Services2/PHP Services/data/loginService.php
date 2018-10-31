@@ -25,15 +25,19 @@
 
 			#parse_str(file_get_contents("php://input"),$post_vars);
     		#echo $post_vars['username']." is the fruit\n";
+
 			$uPassword = $_GET["password"];
 
-			$sql = "SELECT fName, lName
+			$sql = "SELECT fName, lName, passwrd
 					FROM Users
-					WHERE username='$uName' AND passwrd='$uPassword'";
+					WHERE username='$uName'";
 				
 			$result = $connection->query($sql);
+			$pass = $result->fetch_assoc();
+			$pass = $pass["passwrd"];
 
-			if ($result->num_rows > 0)
+
+			if ($result->num_rows > 0 && password_verify ($uPassword, $pass))
 			{
 				// Once we verify the user is who he claims he is is, we do the session part.
 

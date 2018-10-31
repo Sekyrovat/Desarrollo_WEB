@@ -31,7 +31,8 @@
         }
         else
         {
-            $userPassword = $_POST['userPassword'];
+
+            $userPassword = password_hash($_POST['userPassword'], PASSWORD_DEFAULT);
             $userFirstName = $_POST['userFirstName'];
             $userLastName = $_POST['userLastName'];
             

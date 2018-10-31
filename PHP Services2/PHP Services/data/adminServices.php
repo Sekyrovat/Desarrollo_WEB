@@ -36,6 +36,8 @@
             $currentPassword = $put_vars["currentPassword"];
             $newPassword =$put_vars["newPassword"];
 
+            $newPassword1 = password_hash($newPassword, PASSWORD_DEFAULT);
+
             //The above code shows us that the json we send to the backend and that we will receive must look
             //similar to the following
 
@@ -43,7 +45,7 @@
              * {
              *      userName : "alfredo08",
              *      currentPassword : "alfred90",
-             *      newPassword : "alfred91"
+             *      newPassword1 : "alfred91"
              * }
             */
 
@@ -56,7 +58,7 @@
             if ($result ->num_rows > 0) 
             {
                 $sql = "UPDATE users
-                        SET passwrd = '$newPassword'
+                        SET passwrd = '$newPassword1'
                         WHERE username = '$userName' AND passwrd = '$currentPassword'";
 
                 //Other method returns a string.

@@ -33,7 +33,8 @@
             // Put vars will hold the information of all the variables it contains.
 
             $userName = $delete_vars["userName"];
-            $currentPassword = $delete_vars["currentPassword"];
+            $currentPassword = password_hash($delete_vars["currentPassword"], PASSWORD_DEFAULT);
+
 
             //The above code shows us that the json we send to the backend and that we will receive must look
             //similar to the following
